@@ -1,0 +1,22 @@
+{% import "macros/macros.html" as macros %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block head %}
+        <link rel="stylesheet" href="{{ url_for("static",filename="css/base.css") }}">
+        <link rel="stylesheet" href="{{ url_for("static",filename="css/groups.css") }}">
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="search-group">
+            <input type="text" class="search-input" placeholder="搜索…">
+        </div>
+
+        {% block content %}{% endblock %}
+
+    </div>
+</body>
+</html>

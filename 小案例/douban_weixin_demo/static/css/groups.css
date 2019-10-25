@@ -1,0 +1,38 @@
+.item-list-group .item-list-top {
+    overflow: hidden;
+    padding: 10px 10px;
+}
+
+.item-list-top .moudle-title {
+    float: left;
+}
+
+.item-list-top .more-btn {
+    float: right;
+}
+
+.list-group {
+    overflow: hidden;
+    padding: 0 10px;
+}
+
+.list-group .item-group {
+    float: left;
+    margin-right: 10px;
+}
+
+.item-group .thunbnail {
+    /*img是行内元素，若果不定义成块级元素则无法控制元素宽高*/
+    display: block;
+    width: 100px;
+}
+
+.item-group .item-title {
+    font-size: 12px;
+    text-align: center;
+}
+
+.item-group .item-rating {
+    font-size: 12px;
+    text-align: center;
+}

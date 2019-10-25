@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "macros/macros.html" as macros %}
+
+{% block title %}
+    豆瓣微信小程序
+{% endblock %}
+
+{% block content %}
+    {{ macros.listGroup("电影",movies,3,'movies') }}
+    {{ macros.listGroup("电视剧",tvs,3,'tvs') }}
+{% endblock %}

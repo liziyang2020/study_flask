@@ -1,0 +1,27 @@
+{% macro itemGroup(thumbnail,item_name,rating)  %}
+    <div class="item-group">
+        <img src="{{ thumbnail }}" alt="{{ item_name }}" class="thunbnail">
+        <p class="item-title">{{ item_name }}</p>
+        <p class="item-rating">7.5
+            {{ rating }}
+            {% set lights = (rating/2)|int %}
+            {% set halfs = (rating|int)%2 %}
+            {% set grays = 5 - lights - halfs %}
+        </p>
+    </div>
+{% endmacro %}
+
+{% macro listGroup(top_title,listObj,showSize,category) %}
+    <div class="item-list-group">
+        <div class="item-list-top">
+            <span class="moudle-title">{{ top_title }}</span>
+            <a href="{{ url_for("item_list",category=category) }}" class="more-btn">更多</a>
+        </div>
+    </div>
+
+    <div class="list-group">
+        {% for item in listObj[:showSize] %}
+            {{ itemGroup(item.thumbnail,item.name,item.rating) }}
+        {% endfor %}
+    </div>
+{% endmacro %}
